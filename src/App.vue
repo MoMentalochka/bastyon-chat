@@ -302,7 +302,7 @@ export default {
 
     recording: {
       type: String,
-      default: ''
+      default: 'true'
     },
 
     ctheme: String,
@@ -515,8 +515,8 @@ export default {
   },
 
   created() {
-    // this.pocketnet = false
-    // this.mobile = !this.pocketnet
+     this.pocketnet = true
+     this.mobile = !this.pocketnet
 
     this.$store.commit('setPocketnet', this.pocketnet);
     this.$store.commit('setMobile', this.mobile);

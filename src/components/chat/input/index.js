@@ -915,7 +915,7 @@ export default {
         const getDuration = () => {
           audio.removeEventListener('timeupdate', getDuration)
           audio.currentTime = 0
-          if(audio.duration< 1) {
+          if(audio.duration < 1) {
 
             this.clear()
             return
@@ -929,6 +929,11 @@ export default {
         }
 
       })
+      if(this.recordTime < 1000) {
+
+        this.clear()
+        return
+      }
       this.record = {
         audio,
         file: event.data,
